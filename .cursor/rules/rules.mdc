@@ -1,0 +1,16 @@
+# Code Style & Preferences
+- Keep it concise: Write clean, readable code. Avoid over-engineering or premature optimizations.
+- Type Safety: Prefer strict types; avoid loose or dynamic typing (e.g., avoid `any`). Use record types or immutable data holders where appropriate.
+- State Management: Favor localized state and architecture (e.g., server components, local state) over global state unless explicitly necessary.
+- Naming Conventions: Use standard PascalCase for components/classes, camelCase for variables/methods, and UPPER_CASE for constants.
+
+# Debugging & Problem Resolution
+When a fault, error, failure, or unexpected output is experienced, execute the following iterative resolution loop strictly:
+
+1. **Isolate Changes:** Attempt a maximum of one fix at a time. Do not bundle multiple speculative changes together.
+2. **Validate:** Test and verify explicitly if that specific single fix has resolved the issue.
+3. **Rollback on Failure:** If the fix fails to resolve the issue, completely undo/revert the change and reset the fix counter before trying anything else.
+4. **Deep Analysis:** Reevaluate the problem by performing a detailed, line-by-line analysis of the execution path, data flow, and error logs.
+5. **Iterate:** Repeat steps 1 through 4 sequentially until the issue is completely resolved.
+
+CRITICAL: Always diagnose and fix issues at the root cause level. Do not write band-aid code, suppressions, or workarounds that merely mask the symptom.
